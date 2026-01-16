@@ -55,7 +55,37 @@ export default function Home() {
         <p className="text-sm sm:text-base text-neutral-400 mt-3">
           Programmatic animations on small grids
         </p>
-        <div className="mt-8">
+
+        <div className="flex items-center justify-center gap-4 mt-5 text-sm text-neutral-500">
+          <a
+            href="https://draguta.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-2 transition-colors duration-200 ease hover:text-neutral-300"
+          >
+            me
+          </a>
+          <span className="text-neutral-700">•</span>
+          <a
+            href="https://github.com/vasiledraguta"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-2 transition-colors duration-200 ease hover:text-neutral-300"
+          >
+            github
+          </a>
+          <span className="text-neutral-700">•</span>
+          <a
+            href="https://x.com/vasiledraguta"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-2 transition-colors duration-200 ease hover:text-neutral-300"
+          >
+            X
+          </a>
+        </div>
+
+        <div className="mt-6">
           <PlayModeToggle value={playMode} onChange={setPlayMode} />
         </div>
       </header>
