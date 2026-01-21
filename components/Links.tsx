@@ -13,7 +13,7 @@ export const Links = ({ className = "", align = "center" }: LinksProps) => {
 	};
 
 	return (
-		<div className={`flex items-center ${alignmentClasses[align]} gap-4 mt-5 text-sm text-(--color-text-tertiary) ${className}`}>
+		<div className={`flex items-center ${alignmentClasses[align]} gap-4 text-sm text-(--color-text-tertiary) ${className}`}>
           <a
             href="https://draguta.dev"
             target="_blank"

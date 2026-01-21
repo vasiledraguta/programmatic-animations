@@ -50,16 +50,16 @@ export default function GridPage() {
   return (
     <div className="min-h-screen bg-[--color-background]">
       <header className="flex flex-col items-center px-6 pt-8 pb-12 sm:pb-16">
-        <h1 className="text-2xl sm:text-3xl tracking-tight text-(--color-foreground)">
+        <h1 className="text-2xl sm:text-3xl tracking-tight text-(--color-foreground) mb-4">
           Dot Grid Patterns
         </h1>
-        <p className="text-sm sm:text-base text-[--color-text-secondary] mt-3">
+        <p className="text-sm sm:text-base text-[--color-text-secondary] mb-4">
           Programmatic animations on small grids
         </p>
 
-        <Links align="left" />
+        <Links align="left" className="mb-4" />
 
-        <div className="mt-6">
+        <div>
           <PlayModeToggle value={playMode} onChange={setPlayMode} />
         </div>
       </header>

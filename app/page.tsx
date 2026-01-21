@@ -26,11 +26,11 @@ export default function Home() {
         }`}
       >
         <header className="mb-12">
-          <h1 className="text-2xl sm:text-3xl tracking-tight text-(--color-foreground) mb-4">
-            Vasile Draguta
+          <h1 className="text-2xl sm:text-2xl tracking-tight text-(--color-foreground) mb-4">
+            @vasiledraguta
           </h1>
-          <p className="text-base text-(--color-text-secondary) leading-relaxed">
-            i need to add something here at some point
+          <p className="text-base text-(--color-text-secondary) leading-relaxed mb-4">
+          &quot;Everything you can imagine is real.&quot; — Pablo Picasso
           </p>
           <Links align="left" />
         </header>
