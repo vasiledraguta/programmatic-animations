@@ -24,7 +24,7 @@ export function GridCard({
 
   return (
     <article
-      className="bg-(--color-card-bg) border border-(--color-card-border) rounded-xl sm:rounded-2xl p-4 sm:p-6 pb-4 sm:pb-5 flex flex-col items-center justify-between aspect-square transition-colors duration-200 ease hover:border-(--color-card-hover-border) hover:bg-(--color-card-hover-bg)"
+      className="bg-(--color-card-bg) border border-(--color-card-border) rounded-xl sm:rounded-2xl p-4 sm:p-6 pb-4 sm:pb-5 flex flex-col items-center justify-between aspect-square shadow-sm transition-all duration-200 ease hover:border-(--color-card-hover-border) hover:bg-(--color-card-hover-bg) hover:shadow-md"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
