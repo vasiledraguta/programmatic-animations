@@ -1,6 +1,7 @@
 "use client";
 
 import { Carousel } from "@/components/grid/Carousel";
+import Source from "@/components/Source";
 import type { PatternName } from "@/lib/patterns";
 
 type GridShowcase = {
@@ -41,8 +42,11 @@ const showcases: GridShowcase[] = [
 
 export default function GridPage() {
   return (
-    <div className="min-h-screen bg-[--color-background] flex items-center justify-center">
+    <div className="min-h-screen bg-[--color-background] flex items-center justify-center relative">
       <Carousel showcases={showcases} />
+      <div className="absolute bottom-4">
+        <Source href="https://github.com/vasiledraguta/craft/tree/main/components/grid" />
+      </div>
     </div>
   );
 }
