@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState, useRef, useCallback } from "react";
-import { SubscribeForm } from "./SubscribeForm";
+import { NameForm } from "./NameForm";
 
 const helloMessages = [
 	"hello",
@@ -18,7 +18,7 @@ const helloMessages = [
 	"你好",
 ];
 
-const easeOut = { ease: "easeOut" } as const;
+const cubicBezierEaseInOut = { ease: [0.645, 0.045, 0.355, 1] } as const;
 
 export const OnboardFlow = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,24 +28,31 @@ export const OnboardFlow = () => {
 
 	const stopAutoRotate = useCallback(() => {
 		if (intervalRef.current) {
-			clearInterval(intervalRef.current);
+			clearTimeout(intervalRef.current);
 			intervalRef.current = null;
 		}
 	}, []);
 
 	useEffect(() => {
 		if (!isHovered && !showForm) {
-			intervalRef.current = setInterval(
+			const letters = [...helloMessages[currentIndex]];
+			// Animation completes at: 0.4s initial delay + (letters.length - 1) * 0.1s stagger + 0.5s duration
+			const animationDuration = (0.4 + (letters.length - 1) * 0.1 + 0.5) * 1000;
+			const displayDuration = 3000;
+			const totalDelay = animationDuration + displayDuration;
+
+			intervalRef.current = setTimeout(
 				() => setCurrentIndex((i) => (i + 1) % helloMessages.length),
-				5000,
+				totalDelay,
 			);
 		}
 		return stopAutoRotate;
-	}, [isHovered, showForm, stopAutoRotate]);
+	}, [currentIndex, isHovered, showForm, stopAutoRotate]);
 
 	const handleClick = () => {
 		if (!showForm) {
 			stopAutoRotate();
+			setIsHovered(false);
 			setShowForm(true);
 		}
 	};
@@ -53,6 +60,7 @@ export const OnboardFlow = () => {
 	const handleSubscribeComplete = useCallback(() => {
 		setTimeout(() => {
 			setShowForm(false);
+			setIsHovered(false);
 		}, 2000);
 	}, []);
 
@@ -69,11 +77,11 @@ export const OnboardFlow = () => {
 						onMouseLeave={() => setIsHovered(false)}
 						onClick={handleClick}
 						whileHover={{ scale: 1.05 }}
-						transition={{ duration: 0.2, ...easeOut }}
+						transition={{ duration: 0.2, ...cubicBezierEaseInOut }}
 						exit={{
 							y: -80,
 							opacity: 0,
-							transition: { duration: 0.4, ...easeOut },
+							transition: { duration: 0.4, ...cubicBezierEaseInOut },
 						}}
 					>
 						<AnimatePresence mode="wait">
@@ -97,7 +105,7 @@ export const OnboardFlow = () => {
 											opacity: 1,
 											y: 0,
 											scale: 1,
-											transition: { duration: 0.5, delay: 0.4 + i * 0.1, ...easeOut },
+											transition: { duration: 0.5, delay: 0.4 + i * 0.1, ...cubicBezierEaseInOut },
 										}}
 										exit={{
 											opacity: 0,
@@ -106,7 +114,7 @@ export const OnboardFlow = () => {
 											transition: {
 												duration: 0.4,
 												delay: (letters.length - 1 - i) * 0.1,
-												...easeOut,
+												...cubicBezierEaseInOut,
 											},
 										}}
 									>
@@ -123,12 +131,12 @@ export const OnboardFlow = () => {
 									animate={{
 										opacity: 1,
 										y: 0,
-										transition: { duration: 0.3, ...easeOut },
+										transition: { duration: 0.3, ...cubicBezierEaseInOut },
 									}}
 									exit={{
 										opacity: 0,
 										y: 10,
-										transition: { duration: 0.3, ...easeOut },
+										transition: { duration: 0.3, ...cubicBezierEaseInOut },
 									}}
 								>
 									Click to introduce yourself
@@ -137,7 +145,7 @@ export const OnboardFlow = () => {
 						</AnimatePresence>
 					</motion.div>
 				) : (
-					<SubscribeForm key="form" onComplete={handleSubscribeComplete} />
+					<NameForm key="form" onComplete={handleSubscribeComplete} />
 				)}
 			</AnimatePresence>
 		</div>

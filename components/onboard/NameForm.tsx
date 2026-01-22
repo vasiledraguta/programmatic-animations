@@ -3,11 +3,11 @@
 import { type FormEvent, useState, useEffect } from "react";
 import { motion } from "motion/react";
 
-interface SubscribeFormProps {
+interface NameFormProps {
 	onComplete?: () => void;
 }
 
-export const SubscribeForm = ({ onComplete }: SubscribeFormProps) => {
+export const NameForm = ({ onComplete }: NameFormProps) => {
 	const [name, setName] = useState("");
 	const [isFlipped, setIsFlipped] = useState(false);
 
@@ -41,7 +41,7 @@ export const SubscribeForm = ({ onComplete }: SubscribeFormProps) => {
 		>
 			<motion.div
 				animate={{ rotateY: isFlipped ? 180 : 0 }}
-				transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
+				transition={{ duration: 1.2, ease: [0.645, 0.045, 0.355, 1] }}
 				style={{
 					transformStyle: "preserve-3d",
 					position: "relative",
@@ -83,7 +83,7 @@ export const SubscribeForm = ({ onComplete }: SubscribeFormProps) => {
 						/>
 						<button
 							type="submit"
-							className="mr-3 px-6 py-3 text-base rounded-xl font-medium cursor-pointer
+							className="mr-3 px-8 py-4 text-lg rounded-xl font-medium cursor-pointer
 							bg-linear-to-b from-[#fafafa] to-[#e8e8e8]
 							dark:from-[#3a3a3a] dark:to-[#2a2a2a]
 							border border-[#d0d0d0] dark:border-[#404040]
