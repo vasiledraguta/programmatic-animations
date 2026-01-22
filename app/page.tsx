@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Links } from "@/components/Links";
 
 const projects = [
+  { name: "Onboard Flow", href: "/onboard", external: false },
   { name: "Grid Patterns", href: "/grid", external: false },
 ];
 
