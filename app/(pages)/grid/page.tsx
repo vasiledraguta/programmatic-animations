@@ -2,7 +2,6 @@
 
 import { Carousel } from "@/components/grid/Carousel";
 import type { PatternName } from "@/lib/patterns";
-import { Links } from "@/components/Links";
 
 type GridShowcase = {
   size: 3 | 5 | 9;
@@ -42,21 +41,8 @@ const showcases: GridShowcase[] = [
 
 export default function GridPage() {
   return (
-    <div className="min-h-screen bg-[--color-background]">
-      <header className="flex flex-col items-center px-6 pt-8 pb-12 sm:pb-16">
-        <h1 className="text-2xl sm:text-3xl tracking-tight text-(--color-foreground) mb-4">
-          Dot Grid Patterns
-        </h1>
-        <p className="text-sm sm:text-base text-[--color-text-secondary] mb-4">
-          Programmatic animations on small grids
-        </p>
-
-        <Links align="left" className="mb-4" />
-      </header>
-
-      <main className="max-w-full mx-auto pb-12 sm:pb-20">
-        <Carousel showcases={showcases} />
-      </main>
+    <div className="min-h-screen bg-[--color-background] flex items-center justify-center">
+      <Carousel showcases={showcases} />
     </div>
   );
 }

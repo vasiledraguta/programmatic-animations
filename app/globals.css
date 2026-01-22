@@ -10,46 +10,46 @@
 	--carousel-card-width: 280px;
 	--carousel-gap: 24px;
 
-	/* Light mode variables */
-	--color-background: #ffffff;
-	--color-foreground: #0a0a0a;
-	--color-surface: #f5f5f5;
-	--color-border: #e5e5e5;
-	--color-border-hover: #d4d4d4;
-	--color-text-secondary: #737373;
-	--color-text-tertiary: #525252;
-	--color-interactive: #525252;
-	--color-interactive-hover: #0a0a0a;
-	--color-card-bg: rgba(245, 245, 245, 0.5);
-	--color-card-border: rgba(229, 229, 229, 0.6);
-	--color-card-hover-bg: rgba(229, 229, 229, 0.5);
-	--color-card-hover-border: #d4d4d4;
-	--color-dot: #0a0a0a;
-	--color-toggle-active-bg: #0a0a0a;
-	--color-toggle-inactive-bg: #d4d4d4;
-	--color-toggle-knob: #ffffff;
+	/* Light mode variables - ultra soft palette */
+	--color-background: #f8f8f8;
+	--color-foreground: #2c2c2c;
+	--color-surface: #f0f0f0;
+	--color-border: #e0e0e0;
+	--color-border-hover: #d0d0d0;
+	--color-text-secondary: #787878;
+	--color-text-tertiary: #686868;
+	--color-interactive: #686868;
+	--color-interactive-hover: #484848;
+	--color-card-bg: rgba(240, 240, 240, 0.6);
+	--color-card-border: rgba(224, 224, 224, 0.6);
+	--color-card-hover-bg: rgba(224, 224, 224, 0.5);
+	--color-card-hover-border: #d0d0d0;
+	--color-dot: #2c2c2c;
+	--color-toggle-active-bg: #2c2c2c;
+	--color-toggle-inactive-bg: #d0d0d0;
+	--color-toggle-knob: #f8f8f8;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		/* Dark mode overrides */
-		--color-background: #000000;
-		--color-foreground: #ffffff;
-		--color-surface: #171717;
-		--color-border: #404040;
-		--color-border-hover: #525252;
-		--color-text-secondary: #a3a3a3;
-		--color-text-tertiary: #737373;
-		--color-interactive: #737373;
-		--color-interactive-hover: #d4d4d4;
-		--color-card-bg: rgba(23, 23, 23, 0.5);
-		--color-card-border: rgba(38, 38, 38, 0.6);
-		--color-card-hover-bg: rgba(38, 38, 38, 0.5);
-		--color-card-hover-border: #525252;
-		--color-dot: #ffffff;
-		--color-toggle-active-bg: #ffffff;
-		--color-toggle-inactive-bg: #404040;
-		--color-toggle-knob: #000000;
+		/* Dark mode overrides - ultra soft palette */
+		--color-background: #121212;
+		--color-foreground: #d4d4d4;
+		--color-surface: #1e1e1e;
+		--color-border: #252525;
+		--color-border-hover: #303030;
+		--color-text-secondary: #787878;
+		--color-text-tertiary: #5c5c5c;
+		--color-interactive: #686868;
+		--color-interactive-hover: #989898;
+		--color-card-bg: rgba(30, 30, 30, 0.6);
+		--color-card-border: rgba(37, 37, 37, 0.6);
+		--color-card-hover-bg: rgba(37, 37, 37, 0.5);
+		--color-card-hover-border: #303030;
+		--color-dot: #d4d4d4;
+		--color-toggle-active-bg: #d4d4d4;
+		--color-toggle-inactive-bg: #252525;
+		--color-toggle-knob: #121212;
 	}
 }
 
