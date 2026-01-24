@@ -5,9 +5,14 @@ import { useEffect, useState } from "react";
 import { Links } from "@/components/Links";
 
 const projects = [
-	{ name: "Onboard Flow", href: "/onboard", external: false },
-	{ name: "Grid Patterns", href: "/grid", external: false },
+	{ name: "Scrolling Palette", href: "/scrolling-palette" },
+	{ name: "Onboard Flow", href: "/onboard" },
+	{ name: "Grid Patterns", href: "/grid" },
 ];
+
+const fadeIn = "transition-all duration-700 ease-out";
+const visible = "translate-y-0 opacity-100";
+const hidden = "translate-y-6 opacity-0 blur-sm";
 
 export default function Home() {
 	const [mounted, setMounted] = useState(false);
@@ -19,11 +24,7 @@ export default function Home() {
 
 	return (
 		<div className="flex min-h-screen items-center justify-center px-6 py-12">
-			<div
-				className={`w-full max-w-2xl transition-all duration-700 ease-out ${
-					mounted ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0 blur-sm"
-				}`}
-			>
+			<div className={`w-full max-w-2xl ${fadeIn} ${mounted ? visible : hidden}`}>
 				<header className="mb-12">
 					<h1 className="mb-4 text-2xl tracking-tight text-(--color-foreground) sm:text-2xl">
 						@vasiledraguta
@@ -39,12 +40,8 @@ export default function Home() {
 						{projects.map((project, index) => (
 							<li
 								key={project.name}
-								className={`transition-all duration-700 ease-out ${
-									mounted ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0 blur-sm"
-								}`}
-								style={{
-									transitionDelay: mounted ? `${100 + index * 50}ms` : "0ms",
-								}}
+								className={`${fadeIn} ${mounted ? visible : hidden}`}
+								style={{ transitionDelay: mounted ? `${100 + index * 50}ms` : "0ms" }}
 							>
 								<Link
 									href={project.href}
